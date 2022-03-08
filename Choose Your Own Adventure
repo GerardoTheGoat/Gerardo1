@@ -1,0 +1,146 @@
+//variables
+int menuChoice, introChoice, middleChoice1, middleChoice2, middleChoice3;
+string_t name1, name2;
+
+void menu(){
+    printf("look through story or a roadmap\n");
+    printf("Enter '1' for story. Enter '2' for the roadmap. \n");
+    scanf("%i", &menuChoice);
+    while(menuChoice != 1 && menuChoice != 2){
+        printf("That is not a choice. Choose '1' or '2' >:(\n");
+        scanf("%i", &menuChoice);
+    }
+}
+        
+// intro
+void intro(){
+    printf("Choose a name: ");
+    scanf("%i", &name1);
+    printf("Choose another name now: ");
+    scanf("%i", &name2);
+    printf("You have just won the game show for the million dollar trip to a place of your choice. But there's a catch: depending on your choice you can die! Or you can have an amazing trip with family and friends. So choose a trip to the Bahamas but it's over 100 degrees. A trip to Hawaii but it's always raining. Lastly a trip to antarctica but you're being hunted by polar bears. Your helpers in any of our journeys will be ", name1," and ", name2," ");
+    //%s and %s. \n", name, name
+    
+    printf("make your middle choice: 1, 2, or 3\n");
+    scanf("%i", &introChoice);
+    while(introChoice != 1 && introChoice != 2 && introChoice != 3){
+        printf("That is not a choice. Please choose '1', '2', or '3'\n");
+        scanf("%i", &introChoice);
+    }
+}
+//middle 1
+void middle1(){
+    printf(" Once you get to the bahamas you can get the best room and the best trips but you have no sunscreen during the 100 degree weather pick what you would like to do there\n");
+    printf("make your journey choice: 1, 2, or 3\n");
+    scanf("%i", &middleChoice1);
+}
+void middle2(){
+    printf("While in Hawaii its raining the entire time but thankfully you only got to get activities that were outside and the hotel you picked isnt exactly the best coming in at 2 stars.");
+    printf("make your journey choice: 1, 2, or 3\n");
+    scanf("%i", &middleChoice2);
+}
+void middle3(){
+    printf(" While in Antarctica you get to see the aurora borealis everynight in your hotel with a glass roof. along with this you get the best amenities and get to invite one person but everyday you have to complete an obstacle for one day and be hunted by a polar bear.");
+    printf("make your journey choice: 1, 2, or 3\n");
+    scanf("%i", &middleChoice3);
+}
+void end1(){
+    printf("End 1: You just pack your things and go home and win 100,000 dollars along with this you get a new trip in the near future but you can have a actual vacation");
+    exit (1);
+}
+
+void end2(){
+    printf("End 2: You go out get massive sunburn but end up with a good time");
+    exit (2);
+}
+
+void end3(){
+    printf("End 3:  You stay in your hotel and just have fun in there with the various amenities and options in the building");
+    exit (3);
+}
+
+void end4(){
+    printf("End 1: You cant just go home because there is to many people booking flights to leave");
+    exit (4);
+}
+
+void end5(){
+    printf("End 2: The people in the hotel are very rude so you have o option other than to change hotels but since there are no good ones there is just this one because all others are just downgrades");
+    exit (5);
+}
+
+void end6(){
+    printf("End 3: If you go outside you can have fun and explore even if it is raining and there might be a chance for the weather to change");
+    exit (6);
+}
+
+void end7(){
+    printf("End 1: The first obstacle can be swimming in a 40 foot long pool in the antarctica water but the polar bear chases you after 6 minutes");
+    exit (7);
+}
+
+void end8(){
+    printf("End 2: You have to attempt to hand feed a very hungry polar bear");
+    exit (8);
+}
+
+void end9(){
+    printf("End 3: You have flat out outrun a polar bear but you get t be popped up on body enhancing drugs");
+    exit (9);
+}
+//no roadmap
+void menuChoice1(){
+    printf("Choose your own story now\n");
+}
+//roadmap
+void menuChoice2(){
+    printf("Going to bahamas let you choose levaing with 100k, get sunburn, or stay in your hotel.\n Going to Hawaii, you cant leave, hotel is bad, go outside weather changes.\n antarctica obstacle 1 is swim in pool,handfeed polarbear, or outrun a polar bear.");
+}
+
+int main(){  //main program to run (logic)
+    menu();
+    if(1 == menuChoice){
+        menuChoice1();
+    }
+    if(2 == menuChoice){
+        menuChoice2();
+    }
+    intro();
+    if(1 == introChoice){
+        middle1();
+        if(middleChoice1 == 1){
+            end1();
+        }
+        if(middleChoice1 == 2){
+            end2();
+        }
+        if(middleChoice1 == 3){
+            end3();
+        }
+    }
+    if(2 == introChoice){
+        middle2();
+         if(middleChoice2 == 1){
+            end4();
+        }
+        if(middleChoice2 == 2){
+            end5();
+        }
+        if(middleChoice2 == 3){
+            end6();
+        }
+    }
+    if(3 == introChoice){
+        middle3();
+         if(middleChoice3 == 1){
+            end7();
+        }
+        if(middleChoice3 == 2){
+            end8();
+        }
+        if(middleChoice3 == 3){
+            end9();
+        }
+    }
+        
+}
